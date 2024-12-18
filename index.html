@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Leveraging Graph Representations for Tree Manipulation">
-  <meta name="keywords" content="agriculture, gnn, manipulation">
+        content="SonicBoom">
+  <meta name="keywords" content="tactile sensing, audio, agriculture">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Towards Robotic Tree Manipulation: Leveraging Graph Representations</title>
+  <title>SonicBoom: Contact Localization Using Array of Microphones</title>
 
   
 
@@ -46,18 +46,24 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Towards Robotic Tree Manipulation: Leveraging Graph Representations</h1>
+          <h1 class="title is-1 publication-title">SonicBoom: Contact Localization Using Array of Microphones</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://chjohnkim.github.io/">Chung Hee Kim</a></sup>,</span>
+
+              <a href="https://markmlee.github.io/">Moonyoung Lee</a></sup>,</span>
             <span class="author-block">
-              <a href="http://www.moonrobotics.org/">Moonyoung Lee</a></sup>,</span>
-            <span class="author-block">
-              <a href="https://www.ri.cmu.edu/ri-faculty/oliver-kroemer/">Oliver Kroemer</a></sup>,
+              <a href="https://uksangyoo.github.io/">Uksang Yoo</a></sup>,</span>
+              <span class="author-block">
+                <a href="https://www.cs.cmu.edu/~./jeanoh/">Jean Oh</a></sup>,
+              </span>
+              <a href="https://ichnow.ski/">Jeffrey Ichnowski</a></sup>,
             </span>
             <span class="author-block">
               <a href="https://www.ri.cmu.edu/ri-faculty/george-a-kantor/"> George Kantor</a></sup>
             </span>
+              <a href="https://www.ri.cmu.edu/ri-faculty/oliver-kroemer/">Oliver Kroemer</a></sup>,
+            </span>
+            
             
           </div>
 
@@ -69,7 +75,7 @@
             <div class="publication-links">
               <!-- PDF Link. --> 
               <span class="link-block">
-                  <a href="https://arxiv.org/abs/2311.07479"
+                  <a href="https://arxiv.org/abs/2412.09878"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -90,7 +96,7 @@
               -->
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://youtu.be/FGtdYFe0W9A"
+                <a href="https://youtu.be/4bdHyQtuqrM"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -105,7 +111,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (coming soon)</span>
                   </a>
               </span>
               <!-- Dataset Link. -->
@@ -137,20 +143,20 @@
           <div class="column">
             <div class="contact-policy">
               <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/trimmed_contact.mp4" type="video/mp4">
+                <source src="./static/videos/video_static_hits.mp4" type="video/mp4">
               </video>
               <h2 class="subtitle has-text-centered">
-                <span class="dnerf"> Robot executing a learnt contact policy to manipulate trees to the target state. 
+                <span class="dnerf"> Contact point estimation using acoustic signals - prediction point (<span style="color: red;">red</span>)
               </h2>
             </div>
           </div>
           <div class="column">
             <div class="dataset">
               <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/trimmed_dataset.mp4" type="video/mp4">
+                <source src="./static/videos/video_mapping.mp4" type="video/mp4">
               </video>
               <h2 class="subtitle has-text-centered">
-                <span class="dnerf"> Dataset collection process of tree deformation in Issac Gym. 
+                <span class="dnerf"> Haptic mapping using SonicBoom to locate the rigid object - estimated occupancy (<span style="color: green;">green</span>)  
               </h2>
             </div>
           </div>
@@ -169,31 +175,29 @@
         <div class="content has-text-justified">
           <p>
 
-            There is growing interest in automating agricultural
-            tasks that require intricate and precise interaction with
-            specialty crops, such as trees and vines. However, developing
-            robotic solutions for crop manipulation remains a difficult
-            challenge due to complexities involved in modeling their deformable
-            behavior. In this study, we present a framework for
-            learning the deformation behavior of tree-like crops under
-            contact interaction. Our proposed method involves encoding the
-            state of a spring-damper modeled tree crop as a graph. This
-            representation allows us to employ graph networks to learn both
-            a forward model for predicting resulting deformations, and a
-            contact policy for inferring actions to manipulate tree crops.
-            We conduct a comprehensive set of experiments in a simulated
-            environment and demonstrate generalizability of our method
-            on previously unseen trees.
+            In cluttered environments where visual sensors
+            encounter heavy occlusion, such as in agricultural settings,
+            tactile signals can provide crucial spatial information for the
+            robot to locate rigid objects and maneuver around them. We
+            introduce SonicBoom, a holistic hardware and learning pipeline
+            that enables contact localization through an array of contact
+            microphones. While conventional sound source localization methods
+            effectively triangulate sources in air, localization through
+            solid media with irregular geometry and structure presents
+            challenges that are difficult to model analytically. We address this
+            challenge through a feature-engineering and learning-based approach,
+            autonomously collecting 18,000 robot interaction-sound
+            pairs to learn a mapping between acoustic signals and collision
+            locations on the robot end-effector link. By leveraging relative
+            features between microphones, SonicBoom achieves localization
+            errors of 0.43cm for in-distribution interactions and maintains
+            robust performance of 2.22cm error even with novel objects
+            and contact conditions. We demonstrate the system’s practical
+            utility through haptic mapping of occluded branches in mock
+            canopy settings, showing that acoustic-based sensing can enable
+            reliable robot navigation in visually challenging environments.
           </p>
         </div>
-        <img src="./static/images/titile_motivation.jpg"
-        class="interpolation-image"
-        alt="Interpolate start reference image."/>
-    
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf"> Agricultural tasks such as harvesting, pruning, and inspection, often involve contact interactions with crops. 
-        </h2>
-    
       </div>
     </div>
     <!--/ Abstract. -->
@@ -203,8 +207,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe width="930" height="523" src="https://www.youtube.com/embed/FGtdYFe0W9A" title="Towards Robotic Tree Manipulation: Leveraging Graph Representations" 
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="1236" height="695" src="https://www.youtube.com/embed/4bdHyQtuqrM" title="CMU Robotics | SonicBoom: Contact Localization Using Array of Microphones" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
         </div>
       </div>
     </div>
@@ -219,22 +222,24 @@
 
       <!-- Graph Representation  -->
         <div class="content">
-          <h2 class="title is-3">Graph Representation for Trees</h2>
+          <h2 class="title is-3">SonicBoom Hardware</h2>
           <p>
-            Tree structures can be represented as graphs to train the forward model and the contact policy. 
+            SonicBoom end-effector design consists of a 4” x 12” (radius x height) PVC pipe housing six piezoelectric contact microphones. The end-effector resembles a boom microphone
+            commonly used in film or TV production, inspiring the naming of SonicBoom. Inside the end-effector are two rings of three microphones each, positioned at both ends of the
+            tube. 
           </p>
           <p>
-            <strong>Forward Model:</strong> Given an initial tree state and an applied action, the forward model predicts how the resulting tree has deformed by outputting per node differences. 
+            The contact surface can be parameterized in a 2D space defined by height <i>z</i> and azimuth angle <i>θ</i>.  The two-ring configuration provides overlapping
+            coverage regions for redundant sensing while extending the contact-aware surface along the entire length of the endeffector.
           </p>
 
-          <p>
-            <strong>Contact Policy:</strong> Given an initial tree state and target tree state, the contact policy predicts where and how to interact with the tree by outputting per node trajectory and per node affordance. 
-          </p>
-          <div style="text-align: center;">
-            <img src="./static/images/input_output.jpg" width="500"
-               class="interpolation-image"
-               alt="GNN Input Output"/>
-          </div>
+   
+          <figure style="text-align: center;">
+            <img src="./static/images/sonicboom_hw_v2.jpg" 
+                 class="interpolation-image"
+                 alt="GNN Input Output"/>
+            <figcaption>(Left) Contact point parameterized in cylindrical coordinate (Middle) Inside view of the end-effector housing 6 mics (Right) The name 'SonicBoom' is a pun on the boom microphone commonly used in audio recording. </figcaption>
+        </figure>
          
         </div>
       <!--/ Graph Representation  -->
@@ -243,16 +248,50 @@
 
       <!-- Graph Representation  -->
         <div class="content">
-          <h2 class="title is-3">Graph Neural Network Architecture</h2>
+          <h2 class="title is-3">Learning Audio Localization</h2>
           <p>
-            Our GNN model architecture utilizes stackable <a href="https://arxiv.org/abs/1806.01242">graph2graph</a> layers, placed between input embedding layers and output prediction heads. The
-            model takes as input a graph and outputs per-node predictions. Different output heads are used for the forward model and the contact policy
+            Traditional sound source localization methods typically rely on analytical models assuming uniform propagation media like air or
+            elastomers. However, contact-based localization through robot structures presents unique challenges. Vibrations through non-uniform
+            structures like a robot end-effector-link exhibit complex behavior as signal propagates. Thus, we address this challenge through feature engineering and learning-based approach.   
+          </p>
+          <p>
+            <b>Mel Spectrogram</b> capture the energy
+            distribution across frequency and time, but do
+            not explicitly encode the relative timing differences between
+            each microphone pairs that are crucial for localization.
           </p>
 
+          <p>
+            <b>GCC-PHAT</b> Generalized Cross-Correlation with Phase
+            Transform (GCC-PHAT) explicitly computes similarity
+            between microphone pairs as a function of time-lag. This
+            representation improves robustness to noise and reverberation
+            by normalizing the cross-power spectrum to have unit
+            magnitude at all frequencies, GCC-PHAT emphasizes phase
+            alignment while being robust to amplitude variations between
+            microphones
+          </p>
+
+          <p>
+            <b>Robot Proprioception</b> provides a
+            strong prior for contact localization. The intuition is straightforward
+            yet effective: collision is likely to occur in the
+            direction of robot’s motion and highly unlikely on the opposite
+            side, particularly when interacting with static and inanimate
+            objects. We use one-second trajectory of the end-effector’s
+            pose and velocity.
+          </p>
+
+
           
-          <img src="./static/images/model_architecture.svg"
-          class="interpolation-image"
-          alt="Model Architecture"/>
+          <figure style="text-align: center;">
+            <img src="./static/images/system_overviewv3.jpg" 
+                 class="interpolation-image"
+                 alt="GNN Input Output"/>
+            <figcaption>System overview for contact localization in two settings. Each sensing modality is encoded into a latent feature before being fused by the
+              multi-sensory self-attention transformer encoder. The output prediction is represented in cylindrical coordinate z, θ along SonicBoom surface, which can be
+              used for haptic mapping or localization. </figcaption>
+        </figure>
           
         </div>
 
@@ -270,37 +309,50 @@
 <!-- Additional Results -->
 <section class="section">
   <div class="container is-max-desktop">
-      <!-- Results for FWD model  -->
-      <div class="content">
-        <h2 class="title is-3">Forward Model Predictions</h2>
-          <div class="columns">
-            <div class="column">
-              <div class="dataset">
-                <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/single_tree.mp4" type="video/mp4">
-                </video>
-                
-              </div>
-              <p class="subtitle has-text-centered">
-                <span class="dnerf">Initial tree (brown), contact node and trajectory (pink), predicted tree deformation (red), ground-truth tree deformation (green).
-              </p>
-              
-            </div>
-            <div class="column">
-              <div class="contact-policy">
-                <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/multi_tree.mp4" type="video/mp4">
-                </video>
-                <p class="subtitle has-text-centered">
-                  <span class="dnerf">The forward model shown on varying tree structures and sizes. The forward model can generalize zero-shot to unseen tree sizes outside the training set.
-                </p>
-                
-              </div>
-            </div>
-          </div>
+
+    <h2 class="title is-3">Dataset Generation</h2>
+
+    <!-- First Row: 1 GIF and Text Column -->
+    <p>
+      We employ an automated data collection pipeline using a Franka robot equipped with our SonicBoom end-effector, capturing acoustic signatures from various striking actions and beam objects in real-world collision data. Our dataset pairs six-channel audio signals and robot proprioceptive data with contact locations on the SonicBoom surface represented as (z, θ).
+    </p>
+
+    <div class="columns">
+      <div class="column">
+        <div class="dataset">
+          <img src="./static/images/data_collect.gif" alt="Data Collection GIF" style="width: 100%; height: auto;">
+          <p class="caption" style="text-align: center;">Robot striking wooden rod to collect collision sounds.</p>
         </div>
       </div>
-      
+      <div class="column">
+        <div class="dataset">
+          <img src="./static/images/wood.jpg" alt="Another Image" style="width: 100%; height: auto;">
+          <p class="caption" style="text-align: center;">Training and test objects with varying dimension and geometric complexity.</p>
+        </div>
+      </div>
+    </div>
+
+  <!-- Second Row: 3 GIFs with Text -->
+  <div class="columns">
+    <div class="column">
+      <div class="contact-policy">
+        <img src="./static/images/label1.gif" alt="gif1" style="width: 100%; height: auto;">
+      </div>
+    </div>
+    <div class="column">
+      <div class="contact-policy">
+        <img src="./static/images/label2.gif" alt="gif2" style="width: 100%; height: auto;">
+      </div>
+    </div>
+    <div class="column">
+      <div class="contact-policy">
+        <img src="./static/images/label3.gif" alt="gif2" style="width: 100%; height: auto;">
+      </div>
+    </div>
+  </div>
+  <p class="subtitle has-text-centered">
+    <span class="dnerf"> Label for the contact point on the SonicBoom surface is obtained from post-processing the robot trajectory with meshes to determine the closest point of intersection.
+  </p>
   </div>
 </section>
 
@@ -310,67 +362,39 @@
   <div class="container is-max-desktop">
       <!-- Results for FWD model  -->
       <div class="content">
-        <h2 class="title is-3">Contact Policy Inferences</h2>
+        <h2 class="title is-3">Robot Experiments</h2>
 
-          <div class="columns">
-            <div class="column">
-              <div class="dataset">
-                <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/robot_policy_new.mp4" type="video/mp4">
-                </video>
-                
-              </div>
-              <p class="subtitle has-text-centered">
-                <span class="dnerf"> Initial tree state (brown) and the desired target tree state (green). Given a set of candidate actions, we check feasibility and select the best action by iteratively applying RRT* to each candiate.  
-              </p>              
-            </div>
-            <div class="column">
-              <div class="contact-policy">
-                <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/robot_policy_multi.mp4" type="video/mp4">
-                </video>
-                <p class="subtitle has-text-centered">
-                  <span class="dnerf"> The contact policy used to manipulate the tree to a desired target state. The contact policy is shown on varying tree structures and sizes. 
-                </p>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <p>
+          We experiment with
+SonicBoom’s practical utility through two settings: (1) robot-active haptic mapping in occluded
+spaces inspired from robot arm reaching through cluttered branches in an agriculture setting, (2) robot-stationary localization where the human strikes various locations on SonicBoom surface to isolate the contribution of acoustic sensing from robot Proprioception.
+        </p>
+
+        <figure style="text-align: center;">
+          <img src="./static/images/mapping_v4.jpg" 
+               class="interpolation-image"
+               alt="exploration"/>
+          <figcaption> (Left) To get contact trajectories, the robot employs a simple exploration motion based off the object's scanned pointcloud. 
+            Pre-strike positions are sampled and filtered (<span style="color: green;">green</span>). For each remaining point, the robot strikes left,right,up,down in the x,y plane. 
+            (Right) After many collisions, we obtain prediction of contact points (<span style="color: red;">red</span>). </figcaption>
+      </figure>
+
+      <figure style="text-align: center;">
+        <img src="./static/images/localization_drum_v2.jpg" 
+             class="interpolation-image"
+             alt="drum"/>
+        <figcaption> Zero-shot evaluation for (top) novel contact event where human
+          strikes robot as opposed to robot striking the object, and (bottom) novel objects
+          with different material properties. Prediction points are shown in (<span style="color: red;">red</span>).</figcaption>
+    </figure>
+
+
+
       
   </div>
 </section>
 
 
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <div class="dataset">
-            <video poster="" id="dataset" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/trimmed_dataset.mp4" type="video/mp4">
-            </video>
-            <h2 class="subtitle has-text-centered">
-              <span class="dnerf"> Dataset collection process of the tree deformation in Issac Gym. 
-            </h2>
-          </div>
-        </div>
-        <div class="column">
-          <div class="contact-policy">
-            <video poster="" id="contact-policy" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/trimmed_contact.mp4" type="video/mp4">
-            </video>
-            <h2 class="subtitle has-text-centered">
-              <span class="dnerf"> Robot executing the learnt contact policy to move the tree into a target state. 
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 <footer class="footer">
